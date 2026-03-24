@@ -12,7 +12,7 @@ body {
 /* шрифты */
 @font-face {
     font-family: 'Cormorant';
-    src: url('/fonts/Cormorant-Italic.ttf') format('truetype');
+    src: url('../fonts/Cormorant-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic; /* Здесь можно указать italic, так как это курсив */
 }
@@ -23,7 +23,7 @@ body {
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('/fonts/Cormorant-Regular.ttf') format('truetype');
+    src: url('../fonts/Cormorant-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,7 +34,7 @@ body {
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('/fonts/Cormorant-SemiBold.ttf') format('truetype');
+    src: url('../fonts/Cormorant-SemiBold.ttf') format('truetype');
      font-weight: 600; /* или bold, или 600 - стандартное значение для semiBold */
     font-style: normal; /* semiBold - это насыщенность, а не стиль */
 }
@@ -46,7 +46,7 @@ body {
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('/fonts/Cormorant-MediumItalic.ttf') format('truetype');
+    src: url('../fonts/Cormorant-MediumItalic.ttf') format('truetype');
     font-weight: 500; /* Medium = 500 */
     font-style: italic; 
 }
@@ -58,7 +58,7 @@ body {
 }
 @font-face {
     font-family: 'Cormorant';
-    src: url('/fonts/Cormorant-Bold.ttf') format('truetype');
+    src: url('../fonts/Cormorant-Bold.ttf') format('truetype');
     font-weight: 700; /* Bold = 700 */
     font-style: normal; /* Если шрифт не курсивный */
 }

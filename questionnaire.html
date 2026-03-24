@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="styles/questionnaire.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/questionnaire.js"></script>
+</head>
+<body>
+    <main>
+        <div class="questionnaire">
+            <img src="img/questionnaire_img/questionnaire_img.png" alt="questionnaire_img" class="questionnaire_img">
+            <img src="img/Vector.png" alt="vector" class="vector">
+            <div class="text-CormorantSemiBold headline questionnaireHeadline">АНКЕТА</div>
+            <img src="img/questionnaire_img/questionnaireVector.png" alt="questionnaireVector" class="questionnaireVector">
+            <div class="text-CormorantItalic text1">Просим Вас заполнить анкету и подтвердить свое присутствие</div>
+            <div class="text-CormorantSemiBold text2">до 08.07.2026</div>
+
+            <!-- 1. ваше имя -->
+            <div class="text-CormorantRegular question1-text textQ">1. Ваше имя и фамилия*</div>
+            <input type="text" placeholder="Введите имя" class="inputName text-CormorantRegular">
+
+            <!-- 2. планируете ли быть -->
+            <div class="text-CormorantRegular question2-text textQ">2. Планируете ли Вы быть?</div>
+            <div class="radio-group radio-group2">
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="attendance" value="yes" class="radio-input">
+                    <span class="radio-custom"></span>
+                    я приду / мы придем
+                </label>
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="attendance" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    прийти не получится
+                </label>
+            </div>
+
+            <!-- 3. сколько взрослых гостей -->
+            <div class="text-CormorantRegular question3-text textQ">3. Сколько взрослых гостей будет с вами? (включая вас)</div>
+            <div class="radio-group radio-group3">
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="guests" value="1" class="radio-input">
+                    <span class="radio-custom"></span>
+                    1
+                </label>
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="guests" value="2" class="radio-input">
+                    <span class="radio-custom"></span>
+                    2
+                </label>
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="guests" value="3" class="radio-input">
+                    <span class="radio-custom"></span>
+                    3
+                </label>
+            </div>
+            
+            <!-- 4. нужен ли трансфер -->
+            <div class="text-CormorantRegular question4-text textQ">4. Нужен ли Вам трансфер, чтобы добраться до нашего мероприятия? (маршрут будет уточнен)</div>
+            <div class="radio-group radio-group4">
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_to" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    нет
+                </label>
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_to" value="Ostrovets" class="radio-input">
+                    <span class="radio-custom"></span>
+                    да (г. Островец)
+                </label>
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_to" value="Mogilev" class="radio-input">
+                    <span class="radio-custom"></span>
+                    да (г. Могилев)
+                </label>
+            </div>
+            
+            <!-- 5. остаетесь на продолжение? -->
+            <div class="text-CormorantRegular question5-text textQ">5. Планируете ли остаться на 09.08.2026 (воскресенье)?</div>
+            <div class="radio-group radio-group5">
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="stay" value="yes" class="radio-input">
+                    <span class="radio-custom"></span>
+                    да
+                </label>
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="stay" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    нет
+                </label>
+            </div>
+            
+            <!-- 6. трансфер обратно? -->
+            <div class="text-CormorantRegular question6-text textQ">6. Нужен ли Вам трансфер обратно на 09.08.2026?</div>
+            <div class="radio-group radio-group6">
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    нет
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Ostrovets" class="radio-input">
+                    <span class="radio-custom"></span>
+                    да (г. Островец)
+                </label>
+                
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Mogilev" class="radio-input">
+                    <span class="radio-custom"></span>
+                    да (г. Могилев)
+                </label>
+            </div>
+
+            <div class="text-CormorantMediumItalic text6">На 08.09.2026 трансфер с усадьбы не планируется</div>
+
+            <!-- 7. песня -->
+            <div class="text-CormorantRegular question7-text textQ">7. Какие напитки Вы бы хотели видеть на своем столе?</div>
+
+            <div class="radio-group radio-group7">
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    белое вино сухое/ полусухое
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Ostrovets" class="radio-input">
+                    <span class="radio-custom"></span>
+                    белое вино сладкое/ полусладкое
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Mogilev" class="radio-input">
+                    <span class="radio-custom"></span>
+                    красное вино сухое/ полусухое
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    красное вино сладкое/ полусладкое
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Ostrovets" class="radio-input">
+                    <span class="radio-custom"></span>
+                    игристое вино
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Mogilev" class="radio-input">
+                    <span class="radio-custom"></span>
+                    водка
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="no" class="radio-input">
+                    <span class="radio-custom"></span>
+                    коньяк
+                </label>
+
+                <label class="radio-label text-CormorantMediumItalic">
+                    <input type="radio" name="transfer_back" value="Ostrovets" class="radio-input">
+                    <span class="radio-custom"></span>
+                    безалкогольные напитки
+                </label>
+
+            </div>
+
+            <!-- 8. песня -->
+            <div class="text-CormorantRegular question8-text textQ">8. Оставьте, пожалуйста, Ваш любимый трек. Мы включим его в наш плейлист</div>
+            <input type="text" placeholder="название / ссылка" class="inputName2 text-CormorantRegular">
+        
+         <img src="img/Vector.png" alt="vector" class="vector2">
+
+        <!-- кнопки -->
+        <a href="/index.html">
+            <button class="btn-back text-CormorantSemiBold whiteButton">Назад</button>
+        </a>
+
+        <a href="#">
+            <button class="btn-send text-CormorantSemiBold redButton">Отправить</button>
+        </a>
+        
+        
+         </div> 
+    </main>
+</body>
+</html>

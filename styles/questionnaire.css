@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* или любой ваш фон */
+}
+/* шрифты */
+@font-face {
+    font-family: 'AbhayaLibre';
+    src: url('/fonts/AbhayaLibre-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic; /* Здесь можно указать italic, так как это курсив */
+}
+.text-CormorantItalic{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.text-CormorantRegular{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-SemiBold.ttf') format('truetype');
+     font-weight: 600; /* или bold, или 600 - стандартное значение для semiBold */
+    font-style: normal; /* semiBold - это насыщенность, а не стиль */
+}
+.text-CormorantSemiBold{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-weight: 600; /* Указываем ту же насыщенность, что и в @font-face */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-MediumItalic.ttf') format('truetype');
+    font-weight: 500; /* Medium = 500 */
+    font-style: italic; 
+}
+.text-CormorantMediumItalic{
+    /* position: absolute; */
+    font-family: 'Cormorant', serif;
+    font-weight: 500; /* Должен совпадать с @font-face */
+    font-style: italic; /* Должен совпадать с @font-face */
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold = 700 */
+    font-style: normal; /* Если шрифт не курсивный */
+}
+
+.text-CormorantBold {
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+main {
+    display: flex;
+    flex-direction: column; /* Элементы будут идти вертикально */
+    align-items: center;    /* Центрирование по горизонтали */
+    min-width: 402px;
+    justify-content: space-around;
+    
+}
+.headline{
+    font-size: 40px;
+    color: #841412;
+}
+/* ----------------------------------------------- */
+.questionnaire {
+    position: relative;/* родитель */
+    display: flex;
+    flex-direction: column; /* Элементы будут идти вертикально */
+    align-items: center;    /* Центрирование по горизонтали */
+    justify-content: space-around;
+    width: 402px;
+    height: 1740px;
+    
+}
+.questionnaire_img{
+    position: absolute;  /* ребенок */  
+    width: 402px;
+    height: 1740px;
+}
+.cover-vector{
+    position: absolute; /* ребенок */ 
+    width: 84px;
+    top: 730px;
+    left: 159px;
+}
+.vector{
+    position: absolute;
+    width: 72px;
+    height: 7px;
+    top: 24px;
+    left: 165px; 
+}
+.questionnaireHeadline{
+    top: 40px;
+    left: 121px;
+    color: black;
+}
+.questionnaireVector{
+    position: absolute;
+    width: 280px;
+    height: 90px;
+    top: 96px;
+}
+.text1{
+    position: absolute;
+    font-size: 20px;
+    width: 256px;
+    height: 45px;
+    top: 200px;
+    text-align: center;
+}
+.text2{
+    font-size: 30px;
+    color: #841412;
+    top: 250px;
+}
+/* questions */
+.textQ{
+    font-size: 20px;
+    color: #841412;
+    position: absolute;
+    width: 320px;
+}
+.question1-text{
+    top: 300px;
+}
+.inputName{
+    border-bottom: 1px solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    position: absolute;
+    width: 320px;
+    height: 30px;
+    top: 330px;
+    font-size: 18px;
+    outline: none; /* убирает обводку при фокусе */
+    padding: 5px 0;
+}
+
+/* ----------------------------------------- */
+/* радио кнопки */
+
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-size: 18px;
+}
+
+/* Прячем стандартную радио-кнопку */
+.radio-input {
+    display: none;
+}
+
+/* Создаем свой кружок */
+.radio-custom {
+    width: 12px;
+    height: 12px;
+    border: 1.7px solid #841412;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+}
+
+/* Когда радио-кнопка выбрана, добавляем заполненный кружок внутри */
+.radio-input:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #841412;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* для всех */
+.radio-group{
+    position: absolute;
+    width: 300px;
+    left: 58px;
+}
+
+
+/* вопрос 2 */
+.question2-text{
+    top: 380px;
+}
+.radio-group2{
+    top: 410px;
+}
+/* вопрос 3 */
+.question3-text{
+    top: 480px;
+    
+}
+.radio-group3{
+    top: 536px;
+}
+/* вопрос 4 */
+.question4-text{
+    top: 640px;
+}
+.radio-group4{
+    top: 720px;
+}
+/* вопрос 5 */
+.question5-text{
+    top: 820px;
+}
+.radio-group5{
+    top: 880px;
+}
+/* вопрос 6 */
+.question6-text{
+    top: 950px;
+}
+.radio-group6{
+    top: 1010px;
+}
+/* подвопрос */
+.text6{
+    font-size: 16px;
+    color: #841412;
+    width: 340px;
+}
+/* вопрос 7 */
+.question7-text{
+    position: absolute;
+    top: 1130px;
+}
+.radio-group7{
+    top: 1190px;
+}
+
+
+/* вопрос 8 */
+.question8-text{
+    position: absolute;
+    top: 1470px;
+}
+.inputName2{
+    border-bottom: 1px solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    position: absolute;
+    width: 320px;
+    height: 30px;
+    top: 1550px;
+    font-size: 18px;
+    outline: none; /* убирает обводку при фокусе */
+    padding: 5px 0;
+}
+.vector2{
+    position: absolute;
+    width: 72px;
+    height: 7px;
+    top: 1610px;
+    left: 165px; 
+}
+/* кнопки */
+.btn-back{
+    left: 40px;
+    position: absolute;
+    top: 1640px;
+    border: 2px solid #841412;
+    height: 45px;
+    width: 135px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #841412;
+    background-color: #EAEAE8;
+}
+.btn-send{
+    position: absolute;
+    left: 236px;
+    top: 1640px;
+    border: 2px solid #841412;
+    height: 45px;
+    width: 135px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #EAEAE8;
+    background-color: #841412;
+}
+.pressed{
+    background-color: #5A0D0C;
+    color: #ffffff;
+}
+.pressed-red{
+    background-color: #ffffff;
+    color: #841412;
+}
+
+
+
+
+

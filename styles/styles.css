@@ -1,0 +1,658 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* или любой ваш фон */
+}
+/* шрифты */
+@font-face {
+    font-family: 'AbhayaLibre';
+    src: url('/fonts/AbhayaLibre-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic; /* Здесь можно указать italic, так как это курсив */
+}
+.text-CormorantItalic{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.text-CormorantRegular{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-SemiBold.ttf') format('truetype');
+     font-weight: 600; /* или bold, или 600 - стандартное значение для semiBold */
+    font-style: normal; /* semiBold - это насыщенность, а не стиль */
+}
+.text-CormorantSemiBold{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-weight: 600; /* Указываем ту же насыщенность, что и в @font-face */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-MediumItalic.ttf') format('truetype');
+    font-weight: 500; /* Medium = 500 */
+    font-style: italic; 
+}
+.text-CormorantMediumItalic{
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-weight: 500; /* Должен совпадать с @font-face */
+    font-style: italic; /* Должен совпадать с @font-face */
+}
+@font-face {
+    font-family: 'Cormorant';
+    src: url('/fonts/Cormorant-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold = 700 */
+    font-style: normal; /* Если шрифт не курсивный */
+}
+
+.text-CormorantBold {
+    position: absolute;
+    font-family: 'Cormorant', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.vectorFirst{
+    position: absolute;
+    width: 116px;
+    height: 61px;
+    top: 260px;
+}
+.VectorSec{
+    position: absolute;
+    width: 40.82px;
+    height: 9.98px;
+    top: 435px;
+}
+/*  */
+.firstWords{
+    position: absolute;
+    width: 255px;
+    top: 340px;
+    font-size: 20px;
+    color: #841412;
+    text-align: center;
+}
+
+/* -------------------------------------- */
+/* envelope */
+.openPrint{
+    position: absolute;
+    width: 108px;
+    height: 109px;
+    z-index: 100;
+    top: 138px;
+    left: 143px;
+}
+.openText{
+    position: absolute;
+    font-size: 14px;
+    color: #ffffff;
+    width: 52px;
+    top: 180px;
+    left: 170px;
+    z-index: 200;
+}
+.envelope{
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 402px;
+    height: 286px;
+    z-index: 10;
+    align-items: center;
+    cursor: pointer;
+    perspective: 900px;
+    touch-action: manipulation;
+    overflow: hidden;
+}
+.envelop-1{
+    position: absolute;
+    width: 402px;
+    height: 201px;
+    z-index: 10;
+    transform-origin: top center;
+    transform: rotateX(0deg);
+    transition: transform 2000ms cubic-bezier(0.2, 0.9, 0.2, 1);
+    will-change: transform;
+}
+.envelop-2{
+    position: absolute;
+    width: 402px;
+    height: 286px;
+    z-index: 5;
+}
+
+/* Intro / animation states */
+body.intro {
+    overflow: hidden;
+}
+
+body.intro .mainInvitation{
+    position: fixed;
+    inset: 0;
+    overflow: auto;
+    transform: translateY(100%);
+    transition: transform 6000ms cubic-bezier(0.2, 0.9, 0.2, 1), z-index 0ms linear 0ms; /* выезжает пригласительное */
+    z-index: 1;
+    background: #ffffff;
+    will-change: transform;
+    
+}
+
+/* When animation starts */
+body.stage-opening .envelop-1{
+    z-index: 1;
+    transform: rotateX(180deg);
+}
+body.stage-opening .envelop-2{
+    z-index: 10;
+}
+body.stage-opening .mainInvitation{
+    z-index: 5;
+    transform: translateY(0);
+}
+body.stage-open .mainInvitation{
+    transform: translateY(0);
+}
+
+/* Envelope exits after invitation reached top */
+body.stage-exit .envelope{
+    transform: translateX(-50%) translateY(110%);
+    opacity: 0;
+    transition: transform 10000ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 30000ms ease; /* уезжает конверт */
+    pointer-events: none;
+}
+
+body.stage-open {
+    overflow: auto;
+}
+
+/* -------------------------------------- */
+main {
+    display: flex;
+    flex-direction: column; /* Элементы будут идти вертикально */
+    align-items: center;    /* Центрирование по горизонтали */
+    min-width: 402px;
+    justify-content: space-around;
+    
+}
+.mainInvitation{
+    display: flex;
+    flex-direction: column; /* Элементы будут идти вертикально */
+    align-items: center;    /* Центрирование по горизонтали */
+    min-width: 402px;
+    justify-content: space-around;
+    transform: translateY(100%);
+}
+.invitation {
+    display: flex;
+    flex-direction: column; /* Элементы будут идти вертикально */
+    align-items: center;    /* Центрирование по горизонтали */
+    min-width: 402px;
+    justify-content: space-around;
+    width: 402px;
+}
+
+/* заголовки */
+.headline{
+    font-size: 40px;
+    color: #841412;
+
+}
+/* -------------------------------------- */
+/* cover */
+
+.cover{
+    width: 402px;
+    height: 874px;
+    display: flex;
+    background-color: #841412;
+    position: relative;
+}
+.cover_img{
+    width: 376px;
+    height: 820px;
+    margin: auto;
+    
+}
+.headline-cover{
+    position: absolute;  /* Накладываем текст поверх */
+    color: #841412;
+    font-size: 40px;
+
+    top: 130px; 
+    left: 73px; 
+    
+    font-family: 'AbhayaLibre', serif;
+}
+.text1{
+    color: #841412;
+    font-size: 46px;
+
+    
+    top: 175px;
+    left: 99px;
+}
+.photo{
+    position: absolute;
+    width: 238px;
+    width: 238px;
+
+    top: 240px;
+    left:82px;
+}
+
+.text2{
+    color: #841412;
+    top: 528px;
+    left: 72px;
+    font-size: 38px;
+
+}
+.Vector{
+    position: absolute;
+    width: 40.82px;
+    height: 9.98px;
+    top: 600px;
+    left: 181px; 
+}
+.text3{
+    top: 620px;
+    left: 74px;
+    width: 255px;
+    text-align: center;
+    font-size: 20px;
+    color: #841412;
+}
+.cover-vector{
+    position: absolute;
+    width: 84px;
+    top: 730px;
+    left: 159px;
+
+}
+/* -------------------------------------- */
+/* location */
+.location_img{
+    width: 402px;
+    height: 581px;
+}
+.location{
+    overflow: hidden;
+    width: 402px;
+    height: 581px;
+    display: flex;
+    position: relative; /* родитель */ 
+}
+.location-Vector{
+    width: 402px;
+    height: 581px;
+}
+.location-Vector{
+    position: absolute;
+    width: 402px;
+    height: 167px;
+}
+.locationText1{
+    top: 192px;
+    left: 97px;
+}
+.locationText2{
+    top: 250px;
+    left: 14px;
+    color: black;
+    font-size: 20px;
+}
+.location a {
+    color: inherit; /* наследует цвет от родителя */
+}
+.locationText3{
+    top: 290px;
+    left: 38px;
+    color: black;
+    font-size: 20px;
+    width: 326px;
+    text-align: center;
+}
+.location-Vector02{
+    position: absolute;
+    width: 388px;
+    height: 142px;
+    top: 428px;
+    left: 7px;
+}
+/* -------------------------------------- */
+/* timing */
+.timing{
+    width: 402px;
+    height: 1125px;
+    display: flex;
+    position: relative; /* родитель */ 
+}
+.carpet{
+    position: absolute;
+    width: 402px;
+    height: 1125px;
+}
+.timing_img{
+    position: absolute;
+    width: 338px;
+    height: 1043px;
+    top: 35px;
+    left: 32px;
+}
+.timingText1{
+    top: 90px;
+    left: 102px;
+}
+.timingText2{
+    color: #841412;
+    font-size: 36px;
+    top: 159px;
+    left: 61px;
+}
+.timingText2::after {
+    content: "- сбор гостей";
+    color: #000000;  
+    font-size: 20px; 
+}
+.timingText3{
+    top: 200px;
+    left: 61px;
+    width: 280px;
+    height: 40px;
+}
+
+.timingText4{
+    color: #841412;
+    font-size: 36px;
+    top: 242px;
+    left: 61px;
+}
+.timingText4::after {
+    content: "- церемония";
+    color: #000000;  
+    font-size: 20px; 
+}
+.timingText5{
+    top: 280px;
+    left: 61px;
+    width: 280px;
+}
+
+.timingText6{
+    color: #841412;
+    font-size: 36px;
+    top: 348px;
+    left: 61px;
+}
+.timingText6::after {
+    content: " - фотосессия";
+    color: #000000;  
+    font-size: 20px; 
+}
+.timingText7{
+    top: 386px;
+    left: 61px;
+    width: 280px;
+}
+.timingText8{
+    color: #841412;
+    font-size: 36px;
+    top: 454px;
+    left: 61px;
+}
+.timingText8::after {
+    content: " - начало банкета";
+    color: #000000;  
+    font-size: 20px; 
+}
+.timingText9{
+    top: 494px;
+    left: 61px;
+    width: 280px;
+}
+.timingText10{
+    color: #841412;
+    font-size: 36px;
+    top: 517px;
+    left: 61px;
+}
+.timingText10::after {
+    content: " - свадебный торт";
+    color: #000000;  
+    font-size: 20px; 
+}
+.timingText11{
+    top: 554px;
+    left: 61px;
+    width: 280px;
+}
+.timingText12{
+    color: #841412;
+    font-size: 36px;
+    top: 600px;
+    left: 61px;
+}
+.timingText12::after {
+    content: " - завершение банкета";
+    color: #000000;  
+    font-size: 20px; 
+}
+.timingText13{
+    top: 636px;
+    left: 61px;
+    width: 280px;
+}
+.timingText14{
+    top: 706px;
+    left: 61px;
+    font-size: 26px;
+    color: #841412;
+}
+.timingText15{
+    font-size: 18px;
+    color: #841412;
+    width: 270px;
+    top:750px; 
+    left: 61px;
+}
+.timingText15::after {
+    content: " в 11:00 приглашаем на лёгкий воскресный бранч в стенах всё той же усадьбы.";
+    color: #000000; 
+    
+}
+.timingText16{
+    font-size: 18px;
+    color: #000000;
+    width: 270px;
+    top: 850px; 
+    left: 61px;
+}
+.timingText17{
+    font-size: 18px;
+    color: #000000;
+    width: 270px;
+    top: 970px; 
+    left: 61px;
+}
+/* -------------------------------------- */
+/* details */
+.details{
+    width: 402px;
+    height: 874px;
+    position: relative; /* родитель */ 
+}
+.details_img{
+    position: absolute;
+    width: 402px;
+    height: 874px;
+}
+.detailsVector{
+    position: absolute;
+    width: 301px;
+    height: 89px;
+    left: 51px;
+}
+.detailsText1{
+    top: 100px;
+    left: 110px;
+}
+.detailsText2{
+    top: 170px;
+    left: 40px;
+    width: 340;
+    font-size: 20px;
+}
+.detailsText3 {
+    color: #000000; /* Цвет текста */
+    font-size: 20px;
+    width: 340px;
+    top: 260px;
+    left: 40px;
+}
+.detailsText4 {
+    color: #000000; /* Цвет текста */
+    font-size: 20px;
+    width: 340px;
+    top: 320px;
+    left: 40px;
+}
+.detailsText5 {
+    color: #000000; /* Цвет текста */
+    font-size: 20px;
+    width: 340px;
+    top: 460px;
+    left: 40px;
+}
+.highlight {
+    color: #841412; 
+}
+.btn-roulette{
+    position: relative;
+    left: 134px;
+    top: 430px;
+    border: 2px solid #841412;
+    height: 45px;
+    width: 135px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #841412;
+}
+.detailsVector02{
+    position: relative;
+    width: 255px;
+    height: 181px;
+    top: 686px;
+    right: 60px;
+}
+/* -------------------------------------- */
+/* questionnaire */
+.questionnaire{
+    width: 402px;
+    height: 874px;
+    position: relative; /* родитель */ 
+}
+.questionnaireText1{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    width: 300px;
+    color: #000000;
+    top: 40px;
+    left: 51px;
+}
+.questionnaireText2{
+    top: 220px;
+    left: 92px;
+}
+.btn-questionnaire{
+    position: relative;
+    left: 78px;
+    top: 310px;
+    border: 2px solid #841412;
+    height: 45px;
+    width: 245px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #841412;
+}
+.questionnaireVector{
+    position: relative;
+    width: 375px;
+    height: 56px;
+}
+.questionnaireVector01{
+    top: 400px;
+    left: 14px;
+}
+.questionnaireText3{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    width: 194px;
+    color: #000000;
+    top: 510px;
+    left: 104px;
+}
+.questionnaireVector02{
+    top: 540px;
+    left: 14px;
+}
+.questionnaireText4{
+    width: 187px;
+    top: 760px;
+    left: 108px;
+    color: #000000;
+}
+.Vector02{
+    top: 830px;
+}
+/* -------------------------------------- */
+/* часы */
+.clock{
+    position: relative;
+    width: 250px;
+    height: 47px;
+    text-align: center;
+    left: 80px;
+    top: 510px;
+    font-size: 20px;
+}
+.clockNum{
+    color: #841412;
+    font-family: 'Cormorant', serif;
+    font-weight: 600; /* Указываем ту же насыщенность, что и в @font-face */
+    font-style: normal;
+    font-size: 40px;
+}
+/* кнопки */
+.pressed{
+    background-color: #5A0D0C;
+    color: #ffffff;
+}

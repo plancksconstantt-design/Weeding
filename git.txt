@@ -1,0 +1,17 @@
+gпривязываемся к созданному репозиторию на GitHub
+
+git remote -v
+
+вписываем ссылку на репозиторий
+
+git remote add origin https://github.com/plancksconstantt-design/Weeding.git
+
+добавляем все папки в отслеженные 
+
+git add .
+
+копитим
+
+git commit -m "Первый коммит"
+
+git push -u origin main

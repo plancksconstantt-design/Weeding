@@ -251,6 +251,7 @@ main {
 }
 /* подвопрос */
 .text6{
+    position: absolute;
     font-size: 16px;
     color: #841412;
     width: 340px;

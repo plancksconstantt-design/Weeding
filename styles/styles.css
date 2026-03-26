@@ -260,11 +260,10 @@ main {
 }
 .photo{
     position: absolute;
-    width: 238px;
-    width: 238px;
+    width: 200px;
 
     top: 240px;
-    left:82px;
+    left:102px;
 }
 
 .text2{

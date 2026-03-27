@@ -496,7 +496,7 @@ main {
 }
 
 .timingText16::after {
-    content: " - воскрестный бранч";
+    content: " - воскресный бранч";
     color: #000000;  
     font-size: 20px; 
 }
@@ -513,7 +513,7 @@ main {
 }
 
 .timingText18::after {
-    content: " - пора домой";
+    content: " - наш праздник подходит к концу";
     color: #000000;  
     font-size: 20px; 
 }

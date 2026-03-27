@@ -374,7 +374,7 @@ main {
     color: #841412;
     font-size: 36px;
     top: 140px;
-    left: 61px;
+    left: 127px;
 }
 .timingText2{
     color: #841412;
@@ -479,14 +479,14 @@ main {
 .mainTextTiming2{
     color: #841412;
     font-size: 36px;
-    top: 720px;
-    left: 61px;
+    top: 740px;
+    left: 127px;
 }
 .timingText14{
     color: #000000;
     font-size: 26px;
-    top: 770px;
-    left: 61px;
+    top: 720px;
+    left: 83px;
 }
 .timingText16{
     color: #841412;
@@ -508,17 +508,20 @@ main {
 .timingText18{
     color: #841412;
     font-size: 36px;
-    top: 940px;
+    top: 960px;
     left: 61px;
+    width: 280px; 
+    line-height: 16px;
 }
 
 .timingText18::after {
     content: " - наш праздник подходит к концу";
     color: #000000;  
-    font-size: 20px; 
+    font-size: 20px;
+    
 }
 .timingText19{
-    top: 980px;
+    top: 1020px;
     left: 61px;
     width: 280px;
 }

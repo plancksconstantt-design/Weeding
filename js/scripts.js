@@ -61,7 +61,17 @@ $(document).ready(function () {
     const $mainInvitation = $('.mainInvitation');
 
     if ($envelope.length && $mainInvitation.length) {
-        const envelopeAlreadyOpened = localStorage.getItem('envelopeOpened') === 'true';
+        const getTodayKey = () => {
+            const d = new Date();
+            const yyyy = d.getFullYear();
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const dd = String(d.getDate()).padStart(2, '0');
+            return `${yyyy}-${mm}-${dd}`;
+        };
+
+        const todayKey = getTodayKey();
+        const envelopeOpenedDate = localStorage.getItem('envelopeOpenedDate');
+        const envelopeAlreadyOpened = envelopeOpenedDate === todayKey;
 
         if (envelopeAlreadyOpened) {
             // Конверт уже открывали: показываем сразу приглашение без анимации
@@ -95,8 +105,8 @@ $(document).ready(function () {
                         $envelope.remove();
                         $body.removeClass('intro stage-opening stage-exit').addClass('stage-open');
 
-                        // Запоминаем, что конверт уже был открыт
-                        localStorage.setItem('envelopeOpened', 'true');
+                        // Запоминаем дату, когда конверт был открыт (раз в день)
+                        localStorage.setItem('envelopeOpenedDate', todayKey);
                     };
                     $envelope.on('transitionend', onEnvelopeTransitionEnd);
                 };

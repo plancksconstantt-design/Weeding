@@ -183,6 +183,11 @@ main {
     display: none;
 }
 
+/* Прячем стандартный чекбокс */
+.checkbox-input {
+    display: none;
+}
+
 /* Создаем свой кружок */
 .radio-custom {
     width: 12px;
@@ -204,6 +209,29 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Кастомный чекбокс (квадрат + галочка) */
+.checkbox-custom {
+    width: 12px;
+    height: 12px;
+    border: 1.7px solid #841412;
+    border-radius: 2px;
+    margin-right: 10px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    border: solid #841412;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+    top: 50%;
+    left: 50%;
 }
 /* для всех */
 .radio-group{

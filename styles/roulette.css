@@ -142,7 +142,7 @@ main {
     position: absolute; /* ребенок */
     width: 212px;
     height: 157px;
-    top: 200px;
+    top: 140px;
     left: 71px;
 }
 /* кнопки */
@@ -179,4 +179,18 @@ main {
 .pressed-red{
     background-color: #ffffff;
     color: #841412;
+}
+
+/* кнопка выбрать */
+.yes-button{
+    position: absolute;
+    top: 340px;
+    left: 94px;
+    border: 2px solid #841412;
+    height: 45px;
+    width: 170px;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #841412;
+    background-color: #ffffff;
 }

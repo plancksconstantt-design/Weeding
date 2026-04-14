@@ -139,11 +139,21 @@ main {
     left: 68px;
 }
 .present{
-    position: absolute; /* ребенок */
-    width: 212px;
+    /* position: absolute;
+    /* max-width: 212px;
     height: 157px;
     top: 140px;
-    left: 71px;
+    left: 71px; */ 
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 212px;
+    max-height: 157px;
+    width: auto;
+    height: auto;
+    object-fit: contain
 }
 /* кнопки */
 .btn-back{

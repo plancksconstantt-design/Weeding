@@ -284,22 +284,22 @@ main {
     color: #841412;
     width: 400px;
     left: 40px;
-    top: 1100px
+    top: 1110px
 }
 /* вопрос 7 */
 .question7-text{
     position: absolute;
-    top: 1130px;
+    top: 1140px;
 }
 .radio-group7{
-    top: 1190px;
+    top: 1200px;
 }
 
 
 /* вопрос 8 */
 .question8-text{
     position: absolute;
-    top: 1470px;
+    top: 1480px;
 }
 .inputName2{
     border-bottom: 1px solid #000;
@@ -310,7 +310,7 @@ main {
     position: absolute;
     width: 320px;
     height: 30px;
-    top: 1550px;
+    top: 1560px;
     font-size: 18px;
     outline: none; /* убирает обводку при фокусе */
     padding: 5px 0;
@@ -319,7 +319,7 @@ main {
     position: absolute;
     width: 72px;
     height: 7px;
-    top: 1610px;
+    top: 1620px;
     left: 165px; 
 }
 /* кнопки */
@@ -330,7 +330,7 @@ main {
     justify-content: center;
     left: 40px;
     position: absolute;
-    top: 1640px;
+    top: 1650px;
     border: 2px solid #841412;
     height: 45px;
     width: 135px;
@@ -342,7 +342,7 @@ main {
 .btn-send{
     position: absolute;
     left: 236px;
-    top: 1640px;
+    top: 1650px;
     border: 2px solid #841412;
     height: 45px;
     width: 135px;

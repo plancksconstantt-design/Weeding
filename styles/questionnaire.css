@@ -324,6 +324,10 @@ main {
 }
 /* кнопки */
 .btn-back{
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     left: 40px;
     position: absolute;
     top: 1640px;

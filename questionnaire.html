@@ -21,18 +21,18 @@
 
             <!-- 1. ваше имя -->
             <div class="text-CormorantRegular question1-text textQ">1. Ваше имя и фамилия*</div>
-            <input type="text" placeholder="Введите имя" class="inputName text-CormorantRegular" name="full_name">
+            <input type="text" placeholder="Введите имя" class="inputName text-CormorantRegular" name="Имя гостя">
 
             <!-- 2. планируете ли быть -->
             <div class="text-CormorantRegular question2-text textQ">2. Планируете ли Вы быть?</div>
             <div class="radio-group radio-group2">
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="attendance" value="yes" class="radio-input">
+                    <input type="radio" name="присутствие" value="придет" class="radio-input">
                     <span class="radio-custom"></span>
                     я приду / мы придем
                 </label>
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="attendance" value="no" class="radio-input">
+                    <input type="radio" name="присутствие" value="не придет" class="radio-input">
                     <span class="radio-custom"></span>
                     прийти не получится
                 </label>
@@ -42,17 +42,17 @@
             <div class="text-CormorantRegular question3-text textQ">3. Сколько взрослых гостей будет с вами? (включая вас)</div>
             <div class="radio-group radio-group3">
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="guests" value="1" class="radio-input">
+                    <input type="radio" name="количество_гостей" value="1" class="radio-input">
                     <span class="radio-custom"></span>
                     1
                 </label>
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="guests" value="2" class="radio-input">
+                    <input type="radio" name="количество_гостей" value="2" class="radio-input">
                     <span class="radio-custom"></span>
                     2
                 </label>
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="guests" value="3" class="radio-input">
+                    <input type="radio" name="количество_гостей" value="3" class="radio-input">
                     <span class="radio-custom"></span>
                     3
                 </label>
@@ -62,17 +62,17 @@
             <div class="text-CormorantRegular question4-text textQ">4. Нужен ли Вам трансфер, чтобы добраться до нашего мероприятия? (маршрут будет уточнен)</div>
             <div class="radio-group radio-group4">
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="transfer_to" value="no" class="radio-input">
+                    <input type="radio" name="трансфер" value="не нужен" class="radio-input">
                     <span class="radio-custom"></span>
                     нет
                 </label>
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="transfer_to" value="Ostrovets" class="radio-input">
+                    <input type="radio" name="трансфер" value="нужен(Оствровец)" class="radio-input">
                     <span class="radio-custom"></span>
                     да (г. Островец)
                 </label>
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="transfer_to" value="Mogilev" class="radio-input">
+                    <input type="radio" name="трансфер" value="нужен(Могилев)" class="radio-input">
                     <span class="radio-custom"></span>
                     да (г. Могилев)
                 </label>
@@ -82,12 +82,12 @@
             <div class="text-CormorantRegular question5-text textQ">5. Планируете ли остаться на 09.08.2026 (воскресенье)?</div>
             <div class="radio-group radio-group5">
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="stay" value="yes" class="radio-input">
+                    <input type="radio" name="остаетесь_на_продолжение" value="да" class="radio-input">
                     <span class="radio-custom"></span>
                     да
                 </label>
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="stay" value="no" class="radio-input">
+                    <input type="radio" name="остаетесь_на_продолжение" value="нет" class="radio-input">
                     <span class="radio-custom"></span>
                     нет
                 </label>
@@ -98,19 +98,19 @@
             <div class="radio-group radio-group6">
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="transfer_back" value="no" class="radio-input">
+                    <input type="radio" name="трансфер_обратно" value="нет" class="radio-input">
                     <span class="radio-custom"></span>
                     нет
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="transfer_back" value="Ostrovets" class="radio-input">
+                    <input type="radio" name="трансфер_обратно" value="нужен(Островец)" class="radio-input">
                     <span class="radio-custom"></span>
                     да (г. Островец)
                 </label>
                 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="radio" name="transfer_back" value="Mogilev" class="radio-input">
+                    <input type="radio" name="трансфер_обратно" value="нужен(Могилев)" class="radio-input">
                     <span class="radio-custom"></span>
                     да (г. Могилев)
                 </label>
@@ -124,49 +124,49 @@
             <div class="radio-group radio-group7">
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="white_dry" class="checkbox-input">
+                    <input type="checkbox" name="напитки_1" value="белое вино сухое/ полусухое" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     белое вино сухое/ полусухое
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="white_sweet" class="checkbox-input">
+                    <input type="checkbox" name="напитки_2" value="белое вино сладкое/ полусладкое" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     белое вино сладкое/ полусладкое
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="red_dry" class="checkbox-input">
+                    <input type="checkbox" name="напитки_3" value="красное вино сухое/ полусухое" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     красное вино сухое/ полусухое
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="red_sweet" class="checkbox-input">
+                    <input type="checkbox" name="напитки_4" value="красное вино сладкое/ полусладкое" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     красное вино сладкое/ полусладкое
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="sparkling" class="checkbox-input">
+                    <input type="checkbox" name="напитки_5" value="игристое вино" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     игристое вино
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="vodka" class="checkbox-input">
+                    <input type="checkbox" name="напитки_6" value="водка" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     водка
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="cognac" class="checkbox-input">
+                    <input type="checkbox" name="напитки_7" value="коньяк" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     коньяк
                 </label>
 
                 <label class="radio-label text-CormorantMediumItalic">
-                    <input type="checkbox" name="drinks" value="non_alcoholic" class="checkbox-input">
+                    <input type="checkbox" name="напитки_8" value="безалкогольные напитки" class="checkbox-input">
                     <span class="checkbox-custom"></span>
                     безалкогольные напитки
                 </label>
@@ -175,18 +175,14 @@
 
             <!-- 8. песня -->
             <div class="text-CormorantRegular question8-text textQ">8. Оставьте, пожалуйста, Ваш любимый трек. Мы включим его в наш плейлист</div>
-            <input type="text" placeholder="название / ссылка" class="inputName2 text-CormorantRegular" name="track">
+            <input type="text" placeholder="название / ссылка" class="inputName2 text-CormorantRegular" name="песня">
         
          <img src="img/Vector.png" alt="vector" class="vector2">
 
         <!-- кнопки -->
-        <a href="index.html">
-            <button class="btn-back text-CormorantSemiBold whiteButton">Назад</button>
-        </a>
+        <a class="btn-back text-CormorantSemiBold whiteButton" href="index.html">Назад</a>
 
-        <a href="#">
-            <button type="button" class="btn-send text-CormorantSemiBold redButton">Отправить</button>
-        </a>
+        <button type="submit" class="btn-send text-CormorantSemiBold redButton">Отправить</button>
         
         
          </div> 

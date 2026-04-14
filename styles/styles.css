@@ -79,19 +79,19 @@ body {
     position: absolute;
     width: 116px;
     height: 61px;
-    top: 260px;
+    top: 100px;
 }
 .VectorSec{
     position: absolute;
     width: 40.82px;
     height: 9.98px;
-    top: 435px;
+    top: 280px;
 }
 /*  */
 .firstWords{
     position: absolute;
     width: 255px;
-    top: 340px;
+    top: 180px;
     font-size: 20px;
     color: #841412;
     text-align: center;

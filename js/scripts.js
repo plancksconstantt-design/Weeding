@@ -4,7 +4,6 @@ function updateCountdown() {
     const now = new Date();
 
     let diff = wedding - now;
-
     if (diff <= 0) {
         $('#months').text('0');
         $('#days').text('0');
@@ -12,34 +11,29 @@ function updateCountdown() {
         return;
     }
 
-    // Создаем копию текущей даты для расчета
+ // Создаем копию текущей даты для расчета
     let current = new Date(now);
-
     // Расчет месяцев и дней вручную
     let years = wedding.getFullYear() - current.getFullYear();
     let months = wedding.getMonth() - current.getMonth();
     let days = wedding.getDate() - current.getDate();
     let hours = wedding.getHours() - current.getHours();
     let minutes = wedding.getMinutes() - current.getMinutes();
-
     // Корректировка отрицательных значений
     if (minutes < 0) {
         minutes += 60;
         hours--;
     }
-
     if (hours < 0) {
         hours += 24;
         days--;
     }
-
     if (days < 0) {
         // Получаем последний день предыдущего месяца
         let lastDayPrevMonth = new Date(wedding.getFullYear(), wedding.getMonth(), 0).getDate();
         days += lastDayPrevMonth;
         months--;
     }
-
     if (months < 0) {
         months += 12;
         years--;
@@ -51,6 +45,8 @@ function updateCountdown() {
     $('#hours').text(hours);
 }
 
+
+// конверт
 $(document).ready(function () {
     updateCountdown();
     setInterval(updateCountdown, 1000);
@@ -115,6 +111,9 @@ $(document).ready(function () {
             });
         }
     }
+
+
+
 
     // КНОПКИ
     // Настройки для всех кнопок
